@@ -1,4 +1,4 @@
-import pyspark
+from pyspark.context import SparkContext
 
 
 class TweetsSpark:
@@ -7,7 +7,7 @@ class TweetsSpark:
 
     # Метод для записи в переменную, выборочные данные из файла.
     def set_tweets_data(self, path):
-        sc =pyspark.SparkContext.getOrCreate()
+        sc = SparkContext().getOrCreate()
         # Чтение данных и разбиение на колонки.
         self.tweets = sc.textFile(path).map(
             lambda line: line[1:-1].split('","'))
