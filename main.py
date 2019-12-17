@@ -36,7 +36,8 @@ class TweetsSpark:
 
 
 if __name__ == '__main__':
-    file_path = 'file:///home/samat/Downloads/ira_tweets_csv_hashed.csv'
+    file_path = 'hdfs:///user/samat/input/ira_tweets_csv_hashed.csv'
+    #file_path = 'file:///home/samat/Downloads/ira_tweets_csv_hashed.csv'
     ts = TweetsSpark()
     ts.set_tweets_data(file_path)
     ts.set_tweets_filter()
